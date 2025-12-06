@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pemilih Kategori &amp; Promo Terbaik Carousel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#E0C39A",
+                        "primary-darker": "#C8A97E",
+                        "background-light": "#F9F6F2",
+                        "background-dark": "#121212",
+                        "text-light": "#F9F6F2",
+                        "text-dark": "#333333",
+                        "surface-dark": "#1E1E1E"
+                    },
+                    fontFamily: {
+                        "display": ["Playfair Display", "serif"],
+                        "body": ["Lato", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 300,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+<body class="font-body bg-background-light dark:bg-background-dark text-text-dark dark:text-text-light">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center">
+<div class="layout-content-container flex flex-col w-full max-w-[1366px] flex-1">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-6 md:px-12 py-5 bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center gap-4 text-text-light">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined !text-4xl">photo_camera</span>
+</div>
+<h2 class="text-text-light font-display text-2xl font-bold">Lensa Cerita</h2>
+</div>
+
+
+<!-- NAVBAR -->
+<div class="hidden md:flex flex-1 justify-end">
+  <nav class="flex items-center gap-10">
+    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="index.html">BERANDA</a>
+
+    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="portfolio.html">PORTOFOLIO</a>
+
+    <!-- Dropdown -->
+    <div class="relative">
+  <!-- Checkbox untuk toggle -->
+  <input type="checkbox" id="menuLayanan" class="peer hidden">
+
+  <!-- Tombol utama -->
+  <label for="menuLayanan" class="flex items-center gap-1 cursor-pointer text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider">
+
+    LAYANAN
+
+    <!-- Icon panah (rotasi bekerja) -->
+    <span class="material-symbols-outlined text-sm inline-block transition-transform duration-300 peer-checked:rotate-180">
+      expand_more
+    </span>
+  </label>
+
+  <!-- Dropdown -->
+  <div class="absolute hidden peer-checked:block bg-black text-white shadow-lg rounded-md py-2 w-48 z-50 border border-white/10 mt-2">
+    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Wedding</a>
+    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Prewedding</a>
+    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Acara Keluarga</a>
+    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Lamaran</a>
+  </div>
+</div>
+
+
+
+    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="tentang_kami.html">TENTANG</a>
+    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="contact.html">KONTAK</a>
+  </nav>
+</div>
+
+<!-- MOBILE BUTTON -->
+<div class="md:hidden">
+  <button id="mobileMenuBtn" class="flex cursor-pointer items-center justify-center rounded-lg h-10 bg-transparent text-white gap-2 px-2.5">
+    <span class="material-symbols-outlined !text-3xl text-white">menu</span>
+  </button>
+</div>
+
+<!-- MOBILE SIDE MENU -->
+<div id="mobileMenu" class="fixed inset-0 z-50 hidden">
+  <!-- Backdrop -->
+  <div id="menuBackdrop" class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+
+  <!-- Panel samping -->
+  <div class="absolute left-0 top-0 h-full w-[280px] bg-background-dark p-5 text-white shadow-xl animate-slideIn">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-xl font-bold">kreasi_visual</h2>
+      <button id="closeMenu" class="p-2 rounded-full hover:bg-white/20">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <nav class="bg-background-dark">
+      <ul class="flex flex-col gap-3 text-base font-medium">
+
+        <li><a href="index.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">home</span> Beranda</a></li>
+
+        <li><a href="portfolio.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">photo_camera</span> Portofolio</a></li>
+
+        <!-- Submenu -->
+        <li>
+  <details class="group w-full">
+    <summary class="flex w-full items-center justify-between gap-3 py-2 px-2 rounded-lg cursor-pointer hover:bg-white/10 select-none">
+
+      <!-- kiri -->
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-white">design_services</span>
+        <span class="text-white">Layanan</span>
+      </div>
+
+      <!-- panah -->
+      <span class="material-symbols-outlined text-white transition-transform duration-300 group-open:rotate-180">
+        expand_more
+      </span>
+
+    </summary>
+
+    <!-- SUBMENU FULL DARK -->
+    <div class="mt-2 ml-3 flex flex-col gap-2 bg-background-dark p-3 rounded-lg shadow-md ">
+      <a href="daftar_layanan.html" class="text-white hover:underline">Wedding</a>
+      <a href="daftar_layanan.html" class="text-white hover:underline">Prewedding</a>
+      <a href="daftar_layanan.html" class="text-white hover:underline">Acara Keluarga</a>
+      <a href="daftar_layanan.html" class="text-white hover:underline">Lamaran</a>
+    </div>
+
+  </details>
+</li>
+
+
+        <li><a href="tentang_kami.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">info</span> Tentang Kami</a></li>
+
+        <li><a href="contact.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">mail</span> Kontak</a></li>
+
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- ANIMASI -->
+<style>
+  @keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to   { transform: translateX(0); }
+  }
+  .animate-slideIn {
+    animation: slideIn .3s ease-out;
+  }
+</style>
+
+<!-- SCRIPT TOGGLE -->
+<script>
+  const btn = document.getElementById('mobileMenuBtn');
+  const menu = document.getElementById('mobileMenu');
+  const closeBtn = document.getElementById('closeMenu');
+  const backdrop = document.getElementById('menuBackdrop');
+
+  btn.onclick = () => menu.classList.remove('hidden');
+  closeBtn.onclick = () => menu.classList.add('hidden');
+  backdrop.onclick = () => menu.classList.add('hidden');
+</script>
+
+
+</header>
+<div class="py-5 md:py-5 px-4 md:px-12">
+<div class="max-w-7xl mx-auto text-center">
+<h2 class="font-display text-3xl md:text-5xl font-bold leading-tight tracking-[-0.015em] mb-4">Paket Spesial Untuk Momen Anda</h2>
+<p class="text-text-dark/70 dark:text-text-light/70 max-w-2xl mx-auto text-lg mb-12">Pilih paket yang paling sesuai untuk merayakan hari istimewa Anda. Dapatkan penawaran terbaik dengan bundling eksklusif dari kami.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="relative rounded-lg overflow-hidden group min-h-[550px] flex flex-col justify-end text-white">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC-bLarW8WF0h_uYIOI_1tpp5jH8gnpYLulhHVuvZ3TlocwfJARrZmOQN8_vXX63MMAsWY8pw3u2OaNdtua5JFwZ2eM7M-dpT9dYwuizsKL2FnvrDOPoopY9FqnW1RPGSozhoVfFvHLMmC7-6rB1nZ43PJzOMwNBM7d92I6YkiCDpOj_WtW6gyuVsID0L7vU2ZKfDuk5xWIJtGBN6Xi3Bcv-A7qboB6GD9j5byqRuWmuYd7ZmGrnx0mB6f831lNulv2V5uOo3n345I");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
+<div class="relative z-10 p-8 flex flex-col h-full">
+<div class="flex-grow">
+<h3 class="font-display text-3xl font-bold mb-4 text-shadow">Paket Intimate</h3>
+<div>
+<p class="text-xl font-body text-text-light/80 line-through text-shadow">Rp 5.5jt</p>
+<p class="text-5xl font-bold font-display text-primary text-shadow-md">Rp 4.5Jt</p>
+</div>
+<ul class="space-y-3 text-text-light/90 mt-6">>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>4 Jam Sesi Foto</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>1 Fotografer Profesional</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>100 Foto Pilihan (Edited)</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>Galeri Online Pribadi</li>
+</ul>
+</div>
+<button class="w-full mt-8 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-8 bg-white/10 text-white font-body text-base font-bold tracking-wider border border-white/50 backdrop-blur-sm hover:bg-white hover:text-black transition-colors">
+<span class="truncate">PILIH PAKET</span>
+</button>
+</div>
+</div>
+<div class="relative rounded-lg overflow-hidden group min-h-[550px] flex flex-col justify-end text-white scale-105 shadow-2xl shadow-primary/30">
+<div class="absolute top-0 right-0 bg-primary text-background-dark font-bold text-sm py-1.5 px-6 transform rotate-45 translate-x-8 translate-y-5 z-20">POPULER</div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBY0u_jO-rrhyvftQXL_b5s1fnHal6TYUkyah3x-GMPZ80tl3sj6nEl7JtwWBTmtl01nyUYZlA9jVZbvndxn7z61qcCtpcdwuJbGfNU0z73P6gY1Yce6Qp8VIS374cFOHWhFEmlwAS-jatVaTrh9axyxxW85ZmV2yGF_DrcQfKXHpDVC1jkQWxrXuzB3FzG0ozTFchQ-wqe4-SyM6QNnhzRWsqCjQNqWc1F6L2TT7uOkSUmmtuD65NnZtGO33qF1t4BrVJNtvEkHW4");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
+<div class="relative z-10 p-8 flex flex-col h-full">
+<div class="flex-grow">
+<h3 class="font-display text-3xl font-bold mb-4 text-shadow">Paket Abadi</h3>
+<div>
+<p class="text-xl font-body text-text-light/80 line-through text-shadow">Rp 13.0jt</p>
+<p class="text-5xl font-bold font-display text-primary text-shadow-md">Rp 11.0Jt</p>
+</div>
+<ul class="space-y-3 text-text-light/90 mt-6">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>8 Jam Sesi Foto &amp; Video</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>2 Fotografer &amp; 1 Videografer</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>300 Foto Pilihan (Edited)</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>Video Highlight 3-5 Menit</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>Album Cetak Eksklusif</li>
+</ul>
+</div>
+<button class="w-full mt-8 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-8 bg-primary text-background-dark font-body text-base font-bold tracking-wider hover:bg-primary-darker transition-colors">
+<span class="truncate">PILIH PAKET</span>
+</button>
+</div>
+</div>
+<div class="relative rounded-lg overflow-hidden group min-h-[550px] flex flex-col justify-end text-white">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBTkuCQoUjJbm6uCwwzfWPFSk-N2-SfWLAQtn1OOwLhhkJw7zgzcMHkXYI0y-e9AXGm0v22s42ziqx7imUiBYPKzz2b5wcOywY5ihuIXeLkfV-8KTfL_YkazpQTHyqQRIUFYzMLk77UtwdVBF41cE41OHAd-hOOLAOStvkI5HE_tzkkUs8nXWSSELwjaOzGXXHzbLzmlHQRWxL0zaI9gdOcsXhetY95WeDQPwMEBIRzt2iNyKuPAHMz5cz2qgstCuwDn73iRr5dTUk");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
+<div class="relative z-10 p-8 flex flex-col h-full">
+<div class="flex-grow">
+<h3 class="font-display text-3xl font-bold mb-4 text-shadow">Paket Lengkap</h3>
+<p class="text-5xl font-bold font-display text-primary mb-6 text-shadow-md">Rp 18.9Jt</p>
+<ul class="space-y-3 text-text-light/90">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>Sesi Pre-wedding</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>Liputan Hari Pernikahan Penuh</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>Tim Lengkap (Foto &amp; Video)</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>Semua File Foto Diberikan</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span>Video Sinematik 10 Menit</li>
+</ul>
+</div>
+<button class="w-full mt-8 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-8 bg-white/10 text-white font-body text-base font-bold tracking-wider border border-white/50 backdrop-blur-sm hover:bg-white hover:text-black transition-colors">
+<span class="truncate">PILIH PAKET</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- LAYANAN GRID -->
+<!-- <h2 class="mb-3 px-4 text-base font-bold text-slate-900 dark:text-white">
+  Layanan
+</h2> -->
+
+<!-- <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 px-4"> -->
+
+  <!-- ITEM 1 -->
+  <!-- <a class="relative aspect-square overflow-hidden rounded-xl shadow-md bg-slate-200" href="#">
+    <img src="URL1" class="absolute inset-0 h-full w-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+
+    <div class="absolute bottom-0 left-0 right-0 p-3 text-white">
+      <h3 class="font-bold">Wedding</h3>
+      <p class="mt-1 text-xs text-slate-200">Abadikan momen sakral pernikahan Anda.</p>
+    </div>
+  </a> -->
+
+  <!-- ITEM 2 -->
+  <!-- <a class="relative aspect-square overflow-hidden rounded-xl shadow-md bg-slate-200" href="#">
+    <img src="URL2" class="absolute inset-0 h-full w-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+
+    <div class="absolute bottom-0 left-0 right-0 p-3 text-white">
+      <h3 class="font-bold">Prewedding</h3>
+      <p class="mt-1 text-xs text-slate-200">Ciptakan kenangan indah sebelum hari besar.</p>
+    </div>
+  </a> -->
+
+  <!-- ITEM 3 -->
+  <!-- <a class="relative aspect-square overflow-hidden rounded-xl shadow-md bg-slate-200" href="#">
+    <img src="URL3" class="absolute inset-0 h-full w-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+
+    <div class="absolute bottom-0 left-0 right-0 p-3 text-white">
+      <h3 class="font-bold">Lamaran</h3>
+      <p class="mt-1 text-xs text-slate-200">Rekam momen berharga memulai janji.</p>
+    </div>
+  </a> -->
+
+  <!-- ITEM 4 -->
+  <!-- <a class="relative aspect-square overflow-hidden rounded-xl shadow-md bg-slate-200" href="#">
+    <img src="URL4" class="absolute inset-0 h-full w-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+
+    <div class="absolute bottom-0 left-0 right-0 p-3 text-white">
+      <h3 class="font-bold">Wisuda</h3>
+      <p class="mt-1 text-xs text-slate-200">Abadikan momen kelulusanmu!</p>
+    </div>
+  </a>
+
+  <a class="relative aspect-square overflow-hidden rounded-xl shadow-md bg-slate-200" href="#">
+    <img src="URL4" class="absolute inset-0 h-full w-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+
+    <div class="absolute bottom-0 left-0 right-0 p-3 text-white">
+      <h3 class="font-bold">Wisuda</h3>
+      <p class="mt-1 text-xs text-slate-200">Abadikan momen kelulusanmu!</p>
+    </div>
+  </a>
+
+  <a class="relative aspect-square overflow-hidden rounded-xl shadow-md bg-slate-200" href="#">
+    <img src="URL4" class="absolute inset-0 h-full w-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+
+    <div class="absolute bottom-0 left-0 right-0 p-3 text-white">
+      <h3 class="font-bold">Wisuda</h3>
+      <p class="mt-1 text-xs text-slate-200">Abadikan momen kelulusanmu!</p>
+    </div>
+  </a>
+
+</div> -->
+
+</main>
+</div>
+</body></html>

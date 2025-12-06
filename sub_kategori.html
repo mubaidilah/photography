@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sub-kategori Portofolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#E0C39A",
+                        "primary-darker": "#C8A97E",
+                        "background-light": "#F9F6F2",
+                        "background-dark": "#121212",
+                        "text-light": "#F9F6F2",
+                        "text-dark": "#333333",
+                        "surface-dark": "#1E1E1E"
+                    },
+                    fontFamily: {
+                        "display": ["Playfair Display", "serif"],
+                        "body": ["Lato", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 300,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+<body class="font-body bg-background-light dark:bg-background-dark text-text-dark dark:text-text-light">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center">
+<div class="layout-content-container flex flex-col w-full max-w-[1366px] flex-1">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-6 md:px-12 py-5 bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center gap-4 text-text-light">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined !text-4xl">photo_camera</span>
+</div>
+<h2 class="text-text-light font-display text-2xl font-bold">Lensa Cerita</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end">
+<nav class="flex items-center gap-10">
+<a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="index.html">BERANDA</a>
+<a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="portfolio.html">PORTOFOLIO</a>
+<a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="daftar_layanan.html">LAYANAN</a>
+<a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="tentang_kami.html">TENTANG</a>
+<a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="contact.html">KONTAK</a>
+</nav>
+</div>
+<div class="md:hidden">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-transparent text-white gap-2 text-sm font-bold min-w-0 px-2.5">
+<span class="material-symbols-outlined !text-3xl text-white">menu</span>
+</button>
+</div>
+</header>
+<!-- Image Grid for Sub-categories -->
+<div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+<div class="relative bg-cover bg-center flex flex-col rounded-xl justify-end aspect-[3/4]" data-alt="Interior of a grand wedding hall with elegant decorations." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBemtPyvGvXbYdBT92x_LzTW-OuI-FJaNAdAay9FqLR6wy2TiTo5XxLoY4TsM3ErQa54xeIeRLq7Hfcm1HcmvWMUomYCKOPC2ndt9r4n1UHZTBqIj9eHjBh3-CFwVeyk9_k73sT_nL9gbbjx7t7YzMOr9JW0HYB2NwhZaZEnM6YwRJpRKRVe184yiL5xNmb2bUsUvYm54HhpIToDTo8NkuGiCzSmagFSMQs2ajSDNN7zhRK-6wepSqKD4rbNaHtl0i5OKwHXNZY8g");'>
+<div class="flex items-end justify-between p-4">
+<p class="text-white text-base font-bold leading-tight w-4/5 line-clamp-3">Gedung</p>
+<span class="material-symbols-outlined text-white text-2xl">chevron_right</span>
+</div>
+</div>
+<div class="relative bg-cover bg-center flex flex-col rounded-xl justify-end aspect-[3/4]" data-alt="Couple at an outdoor wedding ceremony with a forest background." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAMSD2T6KkQtUW0RnfUY6JtRbmyefJOCKJoXo9esfK0JDXFOR13oWCsB0kBvAQ4r1JSSabpcERT9tTCX81R9HLaUt9FS7yjrDNnvr30tLzL8dN59nYBDMqctfmUtM0rGNF_yOzz353XZiyh_WwqhGGz66kKKn605ribQnMN-kIwRCBzAq-T3-DJSmkWn1btBNU-IY9GJMc1arTtCGYB3DuvBXGEQ29qz5psG-RkQapeWXBGDk3nGrQNvUOyUoFaWwiz4F1AczKbBA");'>
+<div class="flex items-end justify-between p-4">
+<p class="text-white text-base font-bold leading-tight w-4/5 line-clamp-3">Outdoor</p>
+<span class="material-symbols-outlined text-white text-2xl">chevron_right</span>
+</div>
+</div>
+<div class="relative bg-cover bg-center flex flex-col rounded-xl justify-end aspect-[3/4]" data-alt="Bride and groom in traditional Indonesian wedding attire." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAZTpqNjtxsAXMLj7EIS5muVQgRHlXdtAW4mAUjST9YZfUdOxWIj9TXbRMzTitiYkXUCIzaQYV2aOBQttWkXT27LxqZqs6cX96BobC-5-NWt8xRQCJ8PldYLj2P1S-NRSSXO36oHkeISN2uLgmrJx451qbJXZ4DD1PdszMLOd_S_ZLOXW0ReiQwq8ZhErlHR-GXPMliLBZi6o7fBV8ZrnGAoSWo_EDz_VjVAsBn4si7FIJDh1WmBK6pU98wpr_W0SRxSbOXfg3MFg");'>
+<div class="flex items-end justify-between p-4">
+<p class="text-white text-base font-bold leading-tight w-4/5 line-clamp-3">Adat</p>
+<span class="material-symbols-outlined text-white text-2xl">chevron_right</span>
+</div>
+</div>
+<div class="relative bg-cover bg-center flex flex-col rounded-xl justify-end aspect-[3/4]" data-alt="Close-up of wedding rings being exchanged during an Akad Nikah ceremony." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDGcshwzDCP20bmUsmjXFm5YpTJTif2-MJT9VuM8gnQ2V2aRnog40A0FwUAxkoz2r_cLl1_xIxvVFsYf_3vC388-SyXj95SWyVKapK_ex-qLxKHsF3CvK2aHM9LD7DL8-CHVdsgEXG_nc8dpE8DkESJhY7Z7s9KohZM39mdW-wPVuRl0ROEbofuL2EoD7qxj9XLbyYuQNcg-NuDkIA7wmx_2-0Rmvn-Nt8_0jkYjoFzrZnhd1VnT_pe9qWmce2ub3D8IRG4Qtp9zw");'>
+<div class="flex items-end justify-between p-4">
+<p class="text-white text-base font-bold leading-tight w-4/5 line-clamp-3">Akad Nikah</p>
+<span class="material-symbols-outlined text-white text-2xl">chevron_right</span>
+</div>
+</div>
+<div class="relative bg-cover bg-center flex flex-col rounded-xl justify-end aspect-[3/4]" data-alt="A lively wedding reception with guests dancing." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuD5VfTcxYI1hbd8eOGxeV8r9t5QobBhzVVcbddzunsLxFREqpApq16NYKzEmj_rqhGYTs8sH7r7DEdcoShLwr67sNr5-IOr5NQQ-CtJPHHP2nUIxd_mi6YenonH4p3l9lPscLN2_sdBGnikVtXQ1QQPfqbs0voKzqgapLMRLrnz-MWbthDkJk0aIXPPEu-eizV30-QOnADy4ipZODIGvSttuwYTMBb8tV2w1uPjTunQnLzDGmEwaZgzmc93su4pwVYZhodjqCQ06Q");'>
+<div class="flex items-end justify-between p-4">
+<p class="text-white text-base font-bold leading-tight w-4/5 line-clamp-3">Resepsi</p>
+<span class="material-symbols-outlined text-white text-2xl">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</body></html>

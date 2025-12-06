@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detail Paket Abadi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#E0C39A",
+                        "primary-darker": "#C8A97E",
+                        "background-light": "#F9F6F2",
+                        "background-dark": "#121212",
+                        "text-light": "#F9F6F2",
+                        "text-dark": "#333333",
+                        "surface-dark": "#1E1E1E"
+                    },
+                    fontFamily: {
+                        "display": ["Playfair Display", "serif"],
+                        "body": ["Lato", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 300,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+<body class="font-body bg-background-light dark:bg-background-dark text-text-dark dark:text-text-light">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center">
+<div class="layout-content-container flex flex-col w-full max-w-[1366px] flex-1">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-6 md:px-12 py-5 bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center gap-4 text-text-light">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined !text-4xl">photo_camera</span>
+</div>
+<h2 class="text-text-light font-display text-2xl font-bold">Lensa Cerita</h2>
+</div>
+<!-- NAVBAR -->
+<div class="hidden md:flex flex-1 justify-end">
+  <nav class="flex items-center gap-10">
+    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="index.html">BERANDA</a>
+
+    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="portfolio.html">PORTOFOLIO</a>
+
+    <!-- Dropdown -->
+    <div class="relative">
+  <!-- Checkbox untuk toggle -->
+  <input type="checkbox" id="menuLayanan" class="peer hidden">
+
+  <!-- Tombol utama -->
+  <label for="menuLayanan" class="flex items-center gap-1 cursor-pointer text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider">
+
+    LAYANAN
+
+    <!-- Icon panah (rotasi bekerja) -->
+    <span class="material-symbols-outlined text-sm inline-block transition-transform duration-300 peer-checked:rotate-180">
+      expand_more
+    </span>
+  </label>
+
+  <!-- Dropdown -->
+  <div class="absolute hidden peer-checked:block bg-black text-white shadow-lg rounded-md py-2 w-48 z-50 border border-white/10 mt-2">
+    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Wedding</a>
+    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Prewedding</a>
+    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Acara Keluarga</a>
+    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Lamaran</a>
+  </div>
+</div>
+
+
+
+    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="tentang_kami.html">TENTANG</a>
+    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="contact.html">KONTAK</a>
+  </nav>
+</div>
+
+<!-- MOBILE BUTTON -->
+<div class="md:hidden">
+  <button id="mobileMenuBtn" class="flex cursor-pointer items-center justify-center rounded-lg h-10 bg-transparent text-white gap-2 px-2.5">
+    <span class="material-symbols-outlined !text-3xl text-white">menu</span>
+  </button>
+</div>
+
+<!-- MOBILE SIDE MENU -->
+<div id="mobileMenu" class="fixed inset-0 z-50 hidden">
+  <!-- Backdrop -->
+  <div id="menuBackdrop" class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+
+  <!-- Panel samping -->
+  <div class="absolute left-0 top-0 h-full w-[280px] bg-background-dark p-5 text-white shadow-xl animate-slideIn">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-xl font-bold">kreasi_visual</h2>
+      <button id="closeMenu" class="p-2 rounded-full hover:bg-white/20">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <nav class="bg-background-dark">
+      <ul class="flex flex-col gap-3 text-base font-medium">
+
+        <li><a href="index.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">home</span> Beranda</a></li>
+
+        <li><a href="portfolio.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">photo_camera</span> Portofolio</a></li>
+
+        <!-- Submenu -->
+        <li>
+  <details class="group w-full">
+    <summary class="flex w-full items-center justify-between gap-3 py-2 px-2 rounded-lg cursor-pointer hover:bg-white/10 select-none">
+
+      <!-- kiri -->
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-white">design_services</span>
+        <span class="text-white">Layanan</span>
+      </div>
+
+      <!-- panah -->
+      <span class="material-symbols-outlined text-white transition-transform duration-300 group-open:rotate-180">
+        expand_more
+      </span>
+
+    </summary>
+
+    <!-- SUBMENU FULL DARK -->
+    <div class="mt-2 ml-3 flex flex-col gap-2 bg-background-dark p-3 rounded-lg shadow-md ">
+      <a href="daftar_layanan.html" class="text-white hover:underline">Wedding</a>
+      <a href="daftar_layanan.html" class="text-white hover:underline">Prewedding</a>
+      <a href="daftar_layanan.html" class="text-white hover:underline">Acara Keluarga</a>
+      <a href="daftar_layanan.html" class="text-white hover:underline">Lamaran</a>
+    </div>
+
+  </details>
+</li>
+
+
+        <li><a href="tentang_kami.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">info</span> Tentang Kami</a></li>
+
+        <li><a href="contact.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">mail</span> Kontak</a></li>
+
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- ANIMASI -->
+<style>
+  @keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to   { transform: translateX(0); }
+  }
+  .animate-slideIn {
+    animation: slideIn .3s ease-out;
+  }
+</style>
+
+<!-- SCRIPT TOGGLE -->
+<script>
+  const btn = document.getElementById('mobileMenuBtn');
+  const menu = document.getElementById('mobileMenu');
+  const closeBtn = document.getElementById('closeMenu');
+  const backdrop = document.getElementById('menuBackdrop');
+
+  btn.onclick = () => menu.classList.remove('hidden');
+  closeBtn.onclick = () => menu.classList.add('hidden');
+  backdrop.onclick = () => menu.classList.add('hidden');
+</script>
+
+
+</header>
+<main class="w-full">
+<div class="relative w-full h-[60vh] flex items-center justify-center">
+<div class="absolute inset-0 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBY0u_jO-rrhyvftQXL_b5s1fnHal6TYUkyah3x-GMPZ80tl3sj6nEl7JtwWBTmtl01nyUYZlA9jVZbvndxn7z61qcCtpcdwuJbGfNU0z73P6gY1Yce6Qp8VIS374cFOHWhFEmlwAS-jatVaTrh9axyxxW85ZmV2yGF_DrcQfKXHpDVC1jkQWxrXuzB3FzG0ozTFchQ-wqe4-SyM6QNnhzRWsqCjQNqWc1F6L2TT7uOkSUmmtuD65NnZtGO33qF1t4BrVJNtvEkHW4");'></div>
+<div class="absolute inset-0 bg-black/60"></div>
+<div class="relative z-10 flex flex-col gap-4 text-center px-4">
+<h1 class="text-text-light font-display text-4xl font-bold leading-tight md:text-7xl">Paket Abadi</h1>
+<p class="text-text-light/90 font-body text-lg font-normal leading-normal max-w-3xl mx-auto md:text-xl">Solusi lengkap untuk mengabadikan setiap detik hari pernikahan Anda dengan sentuhan sinematik.</p>
+</div>
+</div>
+<div class="px-6 md:px-12 py-20 md:py-24">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+<div class="lg:col-span-2">
+<h2 class="font-display text-3xl md:text-4xl font-bold mb-6">Yang Akan Anda Dapatkan</h2>
+<p class="text-text-dark/80 dark:text-text-light/80 text-lg leading-relaxed mb-10">Paket Abadi dirancang khusus bagi pasangan yang menginginkan dokumentasi lengkap dan berkualitas tinggi. Dari momen persiapan hingga resepsi, tim kami akan menangkap semua emosi dan detail berharga, menyajikannya dalam bentuk foto dan video yang akan Anda kenang selamanya.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary !text-3xl mt-1">schedule</span>
+<div>
+<h3 class="font-bold text-lg mb-1">Durasi Sesi 8 Jam</h3>
+<p class="text-text-dark/70 dark:text-text-light/70">Liputan penuh dari persiapan, upacara, hingga akhir acara resepsi Anda.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary !text-3xl mt-1">groups</span>
+<div>
+<h3 class="font-bold text-lg mb-1">Tim Profesional</h3>
+<p class="text-text-dark/70 dark:text-text-light/70">2 Fotografer &amp; 1 Videografer untuk memastikan semua sudut tercakup.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary !text-3xl mt-1">photo_library</span>
+<div>
+<h3 class="font-bold text-lg mb-1">300+ Hasil Foto</h3>
+<p class="text-text-dark/70 dark:text-text-light/70">Foto pilihan terbaik telah melalui proses editing profesional.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary !text-3xl mt-1">movie</span>
+<div>
+<h3 class="font-bold text-lg mb-1">Video Highlight (3-5 Menit)</h3>
+<p class="text-text-dark/70 dark:text-text-light/70">Klip sinematik yang merangkum keseluruhan hari spesial Anda.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary !text-3xl mt-1">auto_stories</span>
+<div>
+<h3 class="font-bold text-lg mb-1">Album Cetak Eksklusif</h3>
+<p class="text-text-dark/70 dark:text-text-light/70">Album fisik premium (20x30cm, 20 halaman) untuk menyimpan kenangan.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary !text-3xl mt-1">cloud_upload</span>
+<div>
+<h3 class="font-bold text-lg mb-1">Galeri Online Pribadi</h3>
+<p class="text-text-dark/70 dark:text-text-light/70">Akses mudah dan bagikan semua foto Anda dengan keluarga &amp; teman.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-1">
+<div class="sticky top-28 bg-background-light dark:bg-surface-dark p-8 rounded-xl border border-primary/20 shadow-lg">
+<p class="font-display text-5xl font-bold text-primary mb-2">Rp 12.500.000</p>
+<p class="text-text-dark/70 dark:text-text-light/70 mb-8">Investasi untuk kenangan seumur hidup.</p>
+<button class="w-full flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-8 bg-primary text-background-dark font-body text-base font-bold tracking-wider hover:bg-primary-darker transition-colors mb-4">
+<span class="truncate">PESAN SEKARANG</span>
+</button>
+<button class="w-full flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-8 bg-transparent text-text-dark dark:text-text-light font-body text-base font-bold tracking-wider border border-primary/50 hover:bg-primary/10 transition-colors">
+<span class="truncate">HUBUNGI KAMI</span>
+</button>
+<p class="text-xs text-center mt-6 text-text-dark/60 dark:text-text-light/60">Punya permintaan khusus? Kami siap membantu mewujudkannya.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-background-light dark:bg-surface-dark py-20 md:py-24">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<h2 class="font-display text-3xl md:text-4xl font-bold text-center mb-12">Galeri Paket Abadi</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 auto-rows-max gap-4">
+<div class="col-span-1 md:col-span-2 row-span-2 rounded-lg overflow-hidden shadow-md">
+<img alt="Couple walking hand in hand at sunset." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtNpgGEpLao0JRhUzf6CcI8GwFM83cTGF2XSL7bUS-SYrjotcLPSvKNPbrZjTOW7C1bUaZau820lKLXgE9o6aedK1D2MBZo-nrjy-WbQUnO9xIDJWCPKGokAYWc8uSdNI1L8lcjtIcOYiSuPpyXxQtvk9oq_4RDfb0rI4jJGWvDHCuv3dlCiodv5Ud8WsWW-7R_nQvnB-UsxWaMqVbbR2xxsmvllqHksojuPeuFZPSEs_u2CBOfFaKSNiFQaql4sbLRiOBYYVqSEY"/>
+</div>
+<div class="rounded-lg overflow-hidden shadow-md">
+<img alt="A portrait of a bride and groom during their wedding ceremony." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY0u_jO-rrhyvftQXL_b5s1fnHal6TYUkyah3x-GMPZ80tl3sj6nEl7JtwWBTmtl01nyUYZlA9jVZbvndxn7z61qcCtpcdwuJbGfNU0z73P6gY1Yce6Qp8VIS374cFOHWhFEmlwAS-jatVaTrh9axyxxW85ZmV2yGF_DrcQfKXHpDVC1jkQWxrXuzB3FzG0ozTFchQ-wqe4-SyM6QNnhzRWsqCjQNqWc1F6L2TT7uOkSUmmtuD65NnZtGO33qF1t4BrVJNtvEkHW4"/>
+</div>
+<div class="rounded-lg overflow-hidden shadow-md">
+<img alt="Detailed shot of traditional Javanese wedding attire." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTkuCQoUjJbm6uCwwzfWPFSk-N2-SfWLAQtn1OOwLhhkJw7zgzcMHkXYI0y-e9AXGm0v22s42ziqx7imUiBYPKzz2b5wcOywY5ihuIXeLkfV-8KTfL_YkazpQTHyqQRIUFYzMLk77UtwdVBF41cE41OHAd-hOOLAOStvkI5HE_tzkkUs8nXWSSELwjaOzGXXHzbLzmlHQRWxL0zaI9gdOcsXhetY95WeDQPwMEBIRzt2iNyKuPAHMz5cz2qgstCuwDn73iRr5dTUk"/>
+</div>
+<div class="col-span-1 row-span-2 rounded-lg overflow-hidden shadow-md">
+<img alt="A couple posing for a pre-wedding photo shoot on a scenic beach." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-bLarW8WF0h_uYIOI_1tpp5jH8gnpYLulhHVuvZ3TlocwfJARrZmOQN8_vXX63MMAsWY8pw3u2OaNdtua5JFwZ2eM7M-dpT9dYwuizsKL2FnvrDOPoopY9FqnW1RPGSozhoVfFvHLMmC7-6rB1nZ43PJzOMwNBM7d92I6YkiCDpOj_WtW6gyuVsID0L7vU2ZKfDuk5xWIJtGBN6Xi3Bcv-A7qboB6GD9j5byqRuWmuYd7ZmGrnx0mB6f831lNulv2V5uOo3n345I"/>
+</div>
+<div class="col-span-1 md:col-span-2 rounded-lg overflow-hidden shadow-md">
+<img alt="Couple embracing on a mountain top." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTkuCQoUjJbm6uCwwzfWPFSk-N2-SfWLAQtn1OOwLhhkJw7zgzcMHkXYI0y-e9AXGm0v22s42ziqx7imUiBYPKzz2b5wcOywY5ihuIXeLkfV-8KTfL_YkazpQTHyqQRIUFYzMLk77UtwdVBF41cE41OHAd-hOOLAOStvkI5HE_tzkkUs8nXWSSELwjaOzGXXHzbLzmlHQRWxL0zaI9gdOcsXhetY95WeDQPwMEBIRzt2iNyKuPAHMz5cz2qgstCuwDn73iRr5dTUk"/>
+</div>
+<div class="rounded-lg overflow-hidden shadow-md">
+<img alt="Candid photo of guests dancing at a modern wedding reception." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC_XFvmQR1nNx5T1r23a2ly1wRIel4GtTFNBScx2ZyCkduef_FI04BFn7G1S7gYys7FaPFu9UYMyQyU0FyeIwwkRJ6fGeDLaCRe-tnj9kZljpLMj37qwZF_QKO4mlpYM4YXA9mdDmDSoW1BXUQhb2rcxAZoDW9EhvXr_B14_q5QTKuznqK9CfdgHo58u16Pdgsr_IBjVFDW0nwuLijPfwVmJjXZcd7G_QBgmaiuFV2N1x_ED5LxbS2chhXbcGyXBSmb75ciiN1r8M"/>
+</div>
+</div>
+</div>
+</div>
+<div class="px-6 md:px-12 py-20 md:py-24">
+<div class="max-w-4xl mx-auto">
+<h2 class="font-display text-3xl md:text-4xl font-bold text-center mb-12">Pertanyaan Umum (FAQ)</h2>
+<div class="space-y-4">
+<details class="group bg-transparent dark:bg-surface-dark border-b border-primary/20 pb-4">
+<summary class="flex justify-between items-center cursor-pointer font-bold text-lg py-2 text-text-dark dark:text-text-light transition-colors hover:text-primary dark:hover:text-primary">
+<span>Bagaimana cara memesan paket ini?</span>
+<div class="text-primary transition-transform duration-300 group-open:rotate-180">
+<span class="material-symbols-outlined icon-plus">add</span>
+<span class="material-symbols-outlined icon-minus">remove</span>
+</div>
+</summary>
+<p class="pt-4 text-text-dark/80 dark:text-text-light/80 leading-relaxed">Anda dapat memesan melalui tombol 'Pesan Sekarang' atau 'Hubungi Kami' yang tersedia di halaman ini. Tim kami akan segera merespon untuk diskusi lebih lanjut.</p>
+</details>
+<details class="group bg-transparent dark:bg-surface-dark border-b border-primary/20 pb-4">
+<summary class="flex justify-between items-center cursor-pointer font-bold text-lg py-2 text-text-dark dark:text-text-light transition-colors hover:text-primary dark:hover:text-primary">
+<span>Apakah ada biaya tambahan untuk lokasi di luar kota?</span>
+<div class="text-primary transition-transform duration-300 group-open:rotate-180">
+<span class="material-symbols-outlined icon-plus">add</span>
+<span class="material-symbols-outlined icon-minus">remove</span>
+</div>
+</summary>
+<p class="pt-4 text-text-dark/80 dark:text-text-light/80 leading-relaxed">Ya, biaya tambahan akan disesuaikan dengan jarak dan akomodasi jika diperlukan. Kami akan memberikan rincian biaya secara transparan sebelum konfirmasi pemesanan.</p>
+</details>
+<details class="group bg-transparent dark:bg-surface-dark border-b border-primary/20 pb-4">
+<summary class="flex justify-between items-center cursor-pointer font-bold text-lg py-2 text-text-dark dark:text-text-light transition-colors hover:text-primary dark:hover:text-primary">
+<span>Berapa lama proses editing foto dan video?</span>
+<div class="text-primary transition-transform duration-300 group-open:rotate-180">
+<span class="material-symbols-outlined icon-plus">add</span>
+<span class="material-symbols-outlined icon-minus">remove</span>
+</div>
+</summary>
+<p class="pt-4 text-text-dark/80 dark:text-text-light/80 leading-relaxed">Proses editing foto dan video biasanya memakan waktu 4-6 minggu setelah acara. Kami memastikan setiap hasil dikerjakan dengan detail untuk kualitas terbaik.</p>
+</details>
+<details class="group bg-transparent dark:bg-surface-dark border-b border-primary/20 pb-4">
+<summary class="flex justify-between items-center cursor-pointer font-bold text-lg py-2 text-text-dark dark:text-text-light transition-colors hover:text-primary dark:hover:text-primary">
+<span>Bisakah kami meminta penambahan jam layanan?</span>
+<div class="text-primary transition-transform duration-300 group-open:rotate-180">
+<span class="material-symbols-outlined icon-plus">add</span>
+<span class="material-symbols-outlined icon-minus">remove</span>
+</div>
+</summary>
+<p class="pt-4 text-text-dark/80 dark:text-text-light/80 leading-relaxed">Ya, penambahan jam layanan dapat didiskusikan dengan biaya tambahan per jam. Silakan informasikan kebutuhan Anda saat konsultasi.</p>
+</details>
+</div>
+</div>
+</div>
+</main>
+<footer class="border-t border-solid border-white/10 px-6 md:px-12 py-10 bg-background-dark text-text-light/70">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+<div class="flex items-center gap-4">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined !text-4xl">photo_camera</span>
+</div>
+<h2 class="text-text-light font-display text-2xl font-bold">Lensa Cerita</h2>
+</div>
+<p class="font-body text-sm">© 2024 Lensa Cerita. Hak Cipta Dilindungi.</p>
+<div class="flex gap-5">
+<a class="text-text-light/70 hover:text-primary transition-colors" href="#"><svg class="feather feather-instagram" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
+<a class="text-text-light/70 hover:text-primary transition-colors" href="#"><svg class="feather feather-facebook" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+<a class="text-text-light/70 hover:text-primary transition-colors" href="#"><svg class="feather feather-twitter" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</body></html>

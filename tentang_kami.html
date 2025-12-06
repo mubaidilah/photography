@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tentang Kami - Kreasi Visual</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#E0C39A",
+                        "primary-darker": "#C8A97E",
+                        "background-light": "#F9F6F2",
+                        "background-dark": "#121212",
+                        "text-light": "#F9F6F2",
+                        "text-dark": "#333333",
+                        "surface-dark": "#1E1E1E"
+                    },
+                    fontFamily: {
+                        "display": ["Playfair Display", "serif"],
+                        "body": ["Lato", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 300,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+<body class="font-body bg-background-light dark:bg-background-dark text-text-dark dark:text-text-light">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center">
+<div class="layout-content-container flex flex-col w-full max-w-[1366px] flex-1">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-6 md:px-12 py-5 bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center gap-4 text-text-light">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined !text-4xl">photo_camera</span>
+</div>
+<h2 class="text-text-light font-display text-2xl font-bold">Lensa Cerita</h2>
+</div>
+<!-- NAVBAR -->
+<div class="hidden md:flex flex-1 justify-end">
+  <nav class="flex items-center gap-10">
+    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="index.html">BERANDA</a>
+
+    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="portfolio.html">PORTOFOLIO</a>
+
+    <!-- Dropdown -->
+    <div class="relative">
+  <!-- Checkbox untuk toggle -->
+  <input type="checkbox" id="menuLayanan" class="peer hidden">
+
+  <!-- Tombol utama -->
+  <label for="menuLayanan" class="flex items-center gap-1 cursor-pointer text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider">
+
+    LAYANAN
+
+    <!-- Icon panah (rotasi bekerja) -->
+    <span class="material-symbols-outlined text-sm inline-block transition-transform duration-300 peer-checked:rotate-180">
+      expand_more
+    </span>
+  </label>
+
+  <!-- Dropdown -->
+  <div class="absolute hidden peer-checked:block bg-black text-white shadow-lg rounded-md py-2 w-48 z-50 border border-white/10 mt-2">
+    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Wedding</a>
+    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Prewedding</a>
+    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Acara Keluarga</a>
+    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Lamaran</a>
+  </div>
+</div>
+
+
+
+    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="tentang_kami.html">TENTANG</a>
+    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="contact.html">KONTAK</a>
+  </nav>
+</div>
+
+<!-- MOBILE BUTTON -->
+<div class="md:hidden">
+  <button id="mobileMenuBtn" class="flex cursor-pointer items-center justify-center rounded-lg h-10 bg-transparent text-white gap-2 px-2.5">
+    <span class="material-symbols-outlined !text-3xl text-white">menu</span>
+  </button>
+</div>
+
+<!-- MOBILE SIDE MENU -->
+<div id="mobileMenu" class="fixed inset-0 z-50 hidden">
+  <!-- Backdrop -->
+  <div id="menuBackdrop" class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+
+  <!-- Panel samping -->
+  <div class="absolute left-0 top-0 h-full w-[280px] bg-background-dark p-5 text-white shadow-xl animate-slideIn">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-xl font-bold">kreasi_visual</h2>
+      <button id="closeMenu" class="p-2 rounded-full hover:bg-white/20">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <nav class="bg-background-dark">
+      <ul class="flex flex-col gap-3 text-base font-medium">
+
+        <li><a href="index.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">home</span> Beranda</a></li>
+
+        <li><a href="portfolio.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">photo_camera</span> Portofolio</a></li>
+
+        <!-- Submenu -->
+        <li>
+  <details class="group w-full">
+    <summary class="flex w-full items-center justify-between gap-3 py-2 px-2 rounded-lg cursor-pointer hover:bg-white/10 select-none">
+
+      <!-- kiri -->
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-white">design_services</span>
+        <span class="text-white">Layanan</span>
+      </div>
+
+      <!-- panah -->
+      <span class="material-symbols-outlined text-white transition-transform duration-300 group-open:rotate-180">
+        expand_more
+      </span>
+
+    </summary>
+
+    <!-- SUBMENU FULL DARK -->
+    <div class="mt-2 ml-3 flex flex-col gap-2 bg-background-dark p-3 rounded-lg shadow-md ">
+      <a href="daftar_layanan.html" class="text-white hover:underline">Wedding</a>
+      <a href="daftar_layanan.html" class="text-white hover:underline">Prewedding</a>
+      <a href="daftar_layanan.html" class="text-white hover:underline">Acara Keluarga</a>
+      <a href="daftar_layanan.html" class="text-white hover:underline">Lamaran</a>
+    </div>
+
+  </details>
+</li>
+
+
+        <li><a href="tentang_kami.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">info</span> Tentang Kami</a></li>
+
+        <li><a href="contact.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">mail</span> Kontak</a></li>
+
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- ANIMASI -->
+<style>
+  @keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to   { transform: translateX(0); }
+  }
+  .animate-slideIn {
+    animation: slideIn .3s ease-out;
+  }
+</style>
+
+<!-- SCRIPT TOGGLE -->
+<script>
+  const btn = document.getElementById('mobileMenuBtn');
+  const menu = document.getElementById('mobileMenu');
+  const closeBtn = document.getElementById('closeMenu');
+  const backdrop = document.getElementById('menuBackdrop');
+
+  btn.onclick = () => menu.classList.remove('hidden');
+  closeBtn.onclick = () => menu.classList.add('hidden');
+  backdrop.onclick = () => menu.classList.add('hidden');
+</script>
+
+
+</header>
+<!-- Hero Image -->
+<div class="@container px-4">
+<div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden rounded-xl min-h-[280px] shadow-lg" data-alt="Tim kreasi_visual sedang berdiskusi di sebuah studio yang modern dan terang." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBZJ3PAYR2PEEDDZ9btnkjZMRbX41cR94FdCS5ccO6hcDdo83HjeZfBxQanqiDXxHhSLvLXIphkLT33wUGn612ASThuGR9G56IKeJdxKk4Fjmu-RAXl3Swn3PWalhHWU7YLOA00uris6tVbPukcCjcJVQPtPktbzqETi4euS5FmuCBJKGTe5hI-7yX70RPgp0GWb7cRS-YJgmPuKpQ_7rPNPQUVQ21oDyOpkgltS1kQlwHrv3_lLQnNvBh-UBo1oZ9JGALQ-j_GEA");'></div>
+</div>
+<!-- Intro Section -->
+<div class="px-4">
+<h1 class="text-stone-900 dark:text-white tracking-tight text-[32px] font-bold leading-tight text-left pt-6 pb-2">Filosofi Kami</h1>
+<p class="text-stone-700 dark:text-stone-300 text-base font-normal leading-relaxed pb-3">
+        Di kreasi_visual, kami percaya setiap momen memiliki cerita yang layak diabadikan. Kami menggabungkan seni dan teknologi untuk menciptakan karya visual yang tak hanya indah, tapi juga penuh makna dan emosi.
+      </p>
+</div>
+<!-- Visi & Misi Section -->
+<div class="px-4">
+<h2 class="text-stone-900 dark:text-white tracking-tight text-[28px] font-bold leading-tight text-left pt-6 pb-3">Visi &amp; Misi</h2>
+<div class="space-y-4">
+<div>
+<h3 class="text-primary font-bold text-lg">Visi</h3>
+<p class="text-stone-700 dark:text-stone-300 text-base font-normal leading-relaxed">Menjadi mitra kreatif terdepan yang mengabadikan narasi visual paling berkesan bagi individu dan brand di seluruh dunia.</p>
+</div>
+<div>
+<h3 class="text-primary font-bold text-lg">Misi</h3>
+<p class="text-stone-700 dark:text-stone-300 text-base font-normal leading-relaxed">Memberikan layanan fotografi dan videografi dengan kualitas sinematik, didukung oleh inovasi, profesionalisme, dan pemahaman mendalam terhadap cerita unik setiap klien.</p>
+</div>
+</div>
+</div>
+<!-- Tim Kami Section -->
+<div class="pt-8">
+<h2 class="text-stone-900 dark:text-white tracking-tight text-[28px] font-bold leading-tight px-4 text-left pb-4">Tim Kami</h2>
+<div class="relative w-full overflow-x-auto pb-4">
+<div class="flex gap-4 px-4">
+<div class="flex-none w-[150px] text-center">
+<img class="w-full h-[150px] object-cover rounded-xl mb-3 shadow-md" data-alt="Foto potret anggota tim 1, pria tersenyum." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVziZGgfvcZdh_cJPc6X32FIyvduEw_UV-inHNorl90bMLCJnHkQpYqNdlXNiz1gj4Bo6Z23kY76pLeRIFj6i1i9DDOuwmC2I23hpuQXcXVdQMhtn1lHNigK9u_VHbxdox8pxBzAO4xKgsURMRWTaWJyuinkt4OMCSLC9nfF4gnT7rwu-E6eTDxV4FwD4NnJIigeK32Pqnw0E0vvRmNkOubPoxK_svh6Q3_QBYbprsGMqn9sZsbVXymHNNMWLKXyirg6AJGTvSlA"/>
+<h4 class="font-bold text-stone-900 dark:text-white">Andi Pratama</h4>
+<p class="text-sm text-stone-600 dark:text-stone-400">Fotografer Utama</p>
+</div>
+<div class="flex-none w-[150px] text-center">
+<img class="w-full h-[150px] object-cover rounded-xl mb-3 shadow-md" data-alt="Foto potret anggota tim 2, wanita dengan rambut panjang." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXVpvOje1ksYj6SOaq_NML5pJdFhCBft-qLKxn4Rrb2NKnbZ-FXYZ9z6a43FU5Nz2KBbHY4FLV130QaWMKzVq5lFDc3H9Lp0KNfnumVI1ppE6WPA1wVjkEZRdvfxHqpP01rc8Y0sM1I7BQ8fnCxgQ-oro6FKmEn55VXAxaycUjhiD2NEaxuZnaDurqbzf4Lakcorg7QIWqg8-IAEkPHk_0HFoEI8FwXoOmTeC112-qzyufYCwoJulwypWWmjiQ-IjMbSa6SFzEsA"/>
+<h4 class="font-bold text-stone-900 dark:text-white">Citra Lestari</h4>
+<p class="text-sm text-stone-600 dark:text-stone-400">Videografer &amp; Editor</p>
+</div>
+<div class="flex-none w-[150px] text-center">
+<img class="w-full h-[150px] object-cover rounded-xl mb-3 shadow-md" data-alt="Foto potret anggota tim 3, pria dengan latar belakang cerah." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoT7mC95-kh8-bGWVvrknjPhuQ2tA8Xb7QGzvmGW0jUpMigr1JQplr67gk1t-C-O2eW8ZnQWTDXh4uz0VXIPTZyAeCPQSmCbgwIWBsqnQpz2QZRvsP6DBA2aVZfsnXinwFhYYhhZmXkd5paPFgyw3UHGb6EGnKUeEiiPpvbX2QUaLOmbxTad4TGbuVbBfwDAVimPfRhe3k0I_hNabcqLpRRR75YZhDaeoX3VfkLVKZQdi6ng5604wmvuzMy2F-yWFtp23j1MXunA"/>
+<h4 class="font-bold text-stone-900 dark:text-white">Budi Santoso</h4>
+<p class="text-sm text-stone-600 dark:text-stone-400">Creative Director</p>
+</div>
+<div class="flex-none w-[150px] text-center">
+<img class="w-full h-[150px] object-cover rounded-xl mb-3 shadow-md" data-alt="Foto potret anggota tim 4, wanita tersenyum." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9SlRzWvvjWJN--OPvbNRNWZOJnAOQSw8P-tKhE2mUtzDaE6T3KRx7x7v5wGHKqBefsWqG-SZsQONdTi_CQeVHw23evcBgAKt3R_L4zGbg4-PJaXC6M5-87mO-ROXhfk_Dlg4UT2lr6aejZXP6mS-BNOEwDTuHz1EymtzH5sY3Jpl6fjkvT0vLZP4iLlmk5L-Wz7X3UlBUoq_8bkBfnaa9d1Cx1hqNhHG2KZ7v6nJbc_VH4OPm7hA0YJj52dGMw1r1CEZgAkN_zw"/>
+<h4 class="font-bold text-stone-900 dark:text-white">Dewi Anjani</h4>
+<p class="text-sm text-stone-600 dark:text-stone-400">Client Relations</p>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA Button Section -->
+<div class="px-4 pt-8 pb-12">
+<button class="w-full bg-primary text-white font-bold py-4 px-5 rounded-xl shadow-lg shadow-primary/30 hover:bg-opacity-90 transition-colors duration-300">
+            Hubungi Kami
+        </button>
+</div>
+</div>
+</body></html>

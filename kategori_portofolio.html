@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kategori Portofolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#E0C39A",
+                        "primary-darker": "#C8A97E",
+                        "background-light": "#F9F6F2",
+                        "background-dark": "#121212",
+                        "text-light": "#F9F6F2",
+                        "text-dark": "#333333",
+                        "surface-dark": "#1E1E1E"
+                    },
+                    fontFamily: {
+                        "display": ["Playfair Display", "serif"],
+                        "body": ["Lato", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 300,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+<body class="font-body bg-background-light dark:bg-background-dark text-text-dark dark:text-text-light">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center">
+<div class="layout-content-container flex flex-col w-full max-w-[1366px] flex-1">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-6 md:px-12 py-5 bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center gap-4 text-text-light">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined !text-4xl">photo_camera</span>
+</div>
+<h2 class="text-text-light font-display text-2xl font-bold">Lensa Cerita</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end">
+<nav class="flex items-center gap-10">
+<a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="index.html">BERANDA</a>
+<a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="portfolio.html">PORTOFOLIO</a>
+<a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="daftar_layanan.html">LAYANAN</a>
+<a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="tentang_kami.html">TENTANG</a>
+<a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="contact.html">KONTAK</a>
+</nav>
+</div>
+<div class="md:hidden">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-transparent text-white gap-2 text-sm font-bold min-w-0 px-2.5">
+<span class="material-symbols-outlined !text-3xl text-white">menu</span>
+</button>
+</div>
+</header>
+<!-- Spacer -->
+<div class="h-4"></div>
+<!-- Image Grid -->
+<main class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4 pt-0">
+<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] group" data-alt="A newly married couple smiling at their wedding." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuD7atlWZvCfAkdCIWn0mNudzLtgtjNeo4s3ceXZmpBgjj7Omb86RT1AKeg2l_Zc9fqzZJ4C13QioaIKXz0oTDgUDaHexPHYlHYQLRQPg2g330_0qf1D-dPtslATA7V90IRoo9Ncrx9U6ICnh_oWA1bE5mN4HoveGtztU5rNX2cPBqq6rCzIJwvoVT2CTG7im7cSmjv8m53oYeR7odiE2DNe1TGhz-tCzT57c8Rp5kUN1-N-ukU1KoFzx9XHKcKla7eludbwlX_QZQ");'>
+<p class="text-white text-base font-bold leading-tight line-clamp-2 transition-transform duration-300 group-hover:scale-105">Wedding</p>
+</div>
+<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] group" data-alt="A couple posing for a prewedding photoshoot in a scenic outdoor location." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAWbW-Ie1vyMqxKNUfLdcf3--MMSrEsY8IkLLnRJaxNbzQNUyZ0ONuOtlixzSQ5oKH2R17P9t-7oE-52bn2tjx65MLuW8JO-lNvVRJjuMlM7VeWbWUkUX785i7BJbJGIGIXGVvd9e6_V7NalaD5Vyr1_JUxFI76iQf--so-wWLcPuzLASznI0yiwEubHyDRym3u2o4ufyhCldQ07rIJhJ82TDr8mUSghL2g-ilagVbwa-rO1daHSvr0YiQjMClpfVuiIDTxztu4Ug");'>
+<p class="text-white text-base font-bold leading-tight line-clamp-2 transition-transform duration-300 group-hover:scale-105">Prewedding</p>
+</div>
+<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] group" data-alt="A beautiful landscape photo of mountains and a lake during a trip." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBeInK1Dcmho3dj1iL0NFyMQlo9fzlc_uY4AvPcIzJKE_MfdPpwGCLFx3m51hxSxhGU3kbKdUna8RqR8WMvD42XaVLOg_H9WfVZ02nYdGQt5gEQu9FYu2E_fJMEuDax3fbVkiBRhK_8m2yJFTODAo8IyNfDNbWR_CM8Hb8MVJLxrYRoTol7bsLBgzogb4r6k9EsEwOB-3s6JUS8xp72K7xGMeW8LVofnO-ciQSPkMF-1wtl85yQmUatoH_D7YDZRsWZcRvxQUr4nA");'>
+<p class="text-white text-base font-bold leading-tight line-clamp-2 transition-transform duration-300 group-hover:scale-105">Jalan-jalan</p>
+</div>
+<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] group" data-alt="People enjoying a corporate event with festive lighting." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCYqzVnWFOg0YYlB3rkU3QZmeJL_BWQnLc2gjFeoudQsA1FNrl6kRayBd5Vay_Q-3jl5VXBqvb--wlRkp44OEpMV7z9BkjJCk9Rag-p94O6_cwpRoaIwep5faalo4yh8bnJv9zAYmNiN2vDPV0g97v8MR6YWwKn71VksZUXY3vjIXc068xcGXuQR1XO_PUnn7psq5JzcNlEetoPbuMfCwgu4E5u-oR2GfMMvPguwSX_j1heik40WMrQSRyFm0WL-qEmC-qRgw2osA");'>
+<p class="text-white text-base font-bold leading-tight line-clamp-2 transition-transform duration-300 group-hover:scale-105">Event</p>
+</div>
+<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] group" data-alt="A close-up shot of a professionally photographed product on a clean background." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAp8MD-PUhGBssOy-UfhBa_NgR-lmaRxy7sSGQ9Rdwz7LwfooLRmDq3ydimvwKYWC3GQMqHhFk7GQTMdp7N4biT4OSoy8MfkrMAsoo1uW20qN_qFQoFV6CzH7OZ8Y-G1A01Cl4gzQDOj5unKT-wgMsZXe3QImL4QmYLlAQ-rmLyCTi68kci9FxNb4lTVHc82oWoMHSdblmBQrs3zawkOAxDyYQX10bgpm2Jw01NhUTZnvM-MnZzfp5fWz8X3lFKm53kuX8ICLy-jQ");'>
+<p class="text-white text-base font-bold leading-tight line-clamp-2 transition-transform duration-300 group-hover:scale-105">Produk</p>
+</div>
+<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-4 aspect-[3/4] group" data-alt="A happy family portrait taken outdoors." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCJZnGAUXxaFJ1D0BPV7bmqcSMIZYrVh8WP9nIzw47fGMdrsNuVkyEV2EF_lUzfKlEVWsa2T6mcfrLZB-tS2zr0k5iX_r2SClIrhezBWnLUryBShYtVoglss-piciTArelpBdxcAD9sZlHKALe5J93oKsJ1XgQO_qnM_NlY20HhX4aIJ_H7hAp61b19-pJwNWa7IONuBK8PSN7dJC6z8LIbi_EAKLJifut86AunX6GlVSQobvBNOXHRGTMFcybDvtefoo9tLS7l2g");'>
+<p class="text-white text-base font-bold leading-tight line-clamp-2 transition-transform duration-300 group-hover:scale-105">Keluarga</p>
+</div>
+</main>
+<!-- Bottom Spacer -->
+<div class="h-5"></div>
+</div>
+</body></html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detail Proyek &amp; Galeri</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#E0C39A",
+                        "primary-darker": "#C8A97E",
+                        "background-light": "#F9F6F2",
+                        "background-dark": "#121212",
+                        "text-light": "#F9F6F2",
+                        "text-dark": "#333333",
+                        "surface-dark": "#1E1E1E"
+                    },
+                    fontFamily: {
+                        "display": ["Playfair Display", "serif"],
+                        "body": ["Lato", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 300,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+<body class="font-body bg-background-light dark:bg-background-dark text-text-dark dark:text-text-light">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center">
+<div class="layout-content-container flex flex-col w-full max-w-[1366px] flex-1">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-6 md:px-12 py-5 bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center gap-4 text-text-light">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined !text-4xl">photo_camera</span>
+</div>
+<h2 class="text-text-light font-display text-2xl font-bold">Lensa Cerita</h2>
+</div>
+<!-- NAVBAR -->
+<div class="hidden md:flex flex-1 justify-end">
+  <nav class="flex items-center gap-10">
+    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="index.html">BERANDA</a>
+
+    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="portfolio.html">PORTOFOLIO</a>
+
+    <!-- Dropdown -->
+    <div class="relative">
+  <!-- Checkbox untuk toggle -->
+  <input type="checkbox" id="menuLayanan" class="peer hidden">
+
+  <!-- Tombol utama -->
+  <label for="menuLayanan" class="flex items-center gap-1 cursor-pointer text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider">
+
+    LAYANAN
+
+    <!-- Icon panah (rotasi bekerja) -->
+    <span class="material-symbols-outlined text-sm inline-block transition-transform duration-300 peer-checked:rotate-180">
+      expand_more
+    </span>
+  </label>
+
+  <!-- Dropdown -->
+  <div class="absolute hidden peer-checked:block bg-black text-white shadow-lg rounded-md py-2 w-48 z-50 border border-white/10 mt-2">
+    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Wedding</a>
+    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Prewedding</a>
+    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Acara Keluarga</a>
+    <a href="daftar_layanan.html" class="block px-4 py-2 hover:bg-white/10">Lamaran</a>
+  </div>
+</div>
+
+
+
+    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="tentang_kami.html">TENTANG</a>
+    <a class="text-text-light/80 hover:text-primary font-body text-base font-medium tracking-wider transition-colors" href="contact.html">KONTAK</a>
+  </nav>
+</div>
+
+<!-- MOBILE BUTTON -->
+<div class="md:hidden">
+  <button id="mobileMenuBtn" class="flex cursor-pointer items-center justify-center rounded-lg h-10 bg-transparent text-white gap-2 px-2.5">
+    <span class="material-symbols-outlined !text-3xl text-white">menu</span>
+  </button>
+</div>
+
+<!-- MOBILE SIDE MENU -->
+<div id="mobileMenu" class="fixed inset-0 z-50 hidden">
+  <!-- Backdrop -->
+  <div id="menuBackdrop" class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+
+  <!-- Panel samping -->
+  <div class="absolute left-0 top-0 h-full w-[280px] bg-background-dark p-5 text-white shadow-xl animate-slideIn">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-xl font-bold">kreasi_visual</h2>
+      <button id="closeMenu" class="p-2 rounded-full hover:bg-white/20">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <nav class="bg-background-dark">
+      <ul class="flex flex-col gap-3 text-base font-medium">
+
+        <li><a href="index.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">home</span> Beranda</a></li>
+
+        <li><a href="portfolio.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">photo_camera</span> Portofolio</a></li>
+
+        <!-- Submenu -->
+        <li>
+  <details class="group w-full">
+    <summary class="flex w-full items-center justify-between gap-3 py-2 px-2 rounded-lg cursor-pointer hover:bg-white/10 select-none">
+
+      <!-- kiri -->
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-white">design_services</span>
+        <span class="text-white">Layanan</span>
+      </div>
+
+      <!-- panah -->
+      <span class="material-symbols-outlined text-white transition-transform duration-300 group-open:rotate-180">
+        expand_more
+      </span>
+
+    </summary>
+
+    <!-- SUBMENU FULL DARK -->
+    <div class="mt-2 ml-3 flex flex-col gap-2 bg-background-dark p-3 rounded-lg shadow-md ">
+      <a href="daftar_layanan.html" class="text-white hover:underline">Wedding</a>
+      <a href="daftar_layanan.html" class="text-white hover:underline">Prewedding</a>
+      <a href="daftar_layanan.html" class="text-white hover:underline">Acara Keluarga</a>
+      <a href="daftar_layanan.html" class="text-white hover:underline">Lamaran</a>
+    </div>
+
+  </details>
+</li>
+
+
+        <li><a href="tentang_kami.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">info</span> Tentang Kami</a></li>
+
+        <li><a href="contact.html" class="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-black/10"><span class="material-symbols-outlined">mail</span> Kontak</a></li>
+
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- ANIMASI -->
+<style>
+  @keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to   { transform: translateX(0); }
+  }
+  .animate-slideIn {
+    animation: slideIn .3s ease-out;
+  }
+</style>
+
+<!-- SCRIPT TOGGLE -->
+<script>
+  const btn = document.getElementById('mobileMenuBtn');
+  const menu = document.getElementById('mobileMenu');
+  const closeBtn = document.getElementById('closeMenu');
+  const backdrop = document.getElementById('menuBackdrop');
+
+  btn.onclick = () => menu.classList.remove('hidden');
+  closeBtn.onclick = () => menu.classList.add('hidden');
+  backdrop.onclick = () => menu.classList.add('hidden');
+</script>
+
+
+</header>
+<main class="flex flex-1 flex-col">
+<h1 class="px-4 pb-2 pt-4 text-left text-[32px] font-bold leading-tight tracking-tight text-slate-900 dark:text-white">Pernikahan Adat Jawa - Rian &amp; Sarah</h1>
+<p class="px-4 pb-3 text-base font-normal leading-normal text-slate-600 dark:text-slate-300">
+                Sebuah perayaan cinta yang sakral dalam balutan adat Jawa, mengabadikan setiap momen berharga dari Rian dan Sarah di Yogyakarta.
+            </p>
+<div class="flex gap-2 overflow-x-auto p-4 pt-2">
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-4">
+<p class="text-sm font-medium leading-normal text-primary">Pernikahan</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-4">
+<p class="text-sm font-medium leading-normal text-primary">Adat Jawa</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-4">
+<p class="text-sm font-medium leading-normal text-primary">Yogyakarta</p>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 auto-rows-[200px] md:auto-rows-[260px] gap-3 p-4 pt-1">
+
+  <!-- Foto 1 (tinggi) -->
+  <div class="row-span-2 bg-cover bg-center rounded-xl" 
+       style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDpGDgYFdHW9fk_B9poYrToAs925OHTN9UMPaOEUGiNL0_y9PDCE8Z85Kv-o1m4UVrty2aZMuXkQguNKEaz9TMx-dRvgJhHuZ-BzDoc1nA1H9yxRooQWbZzih07DyFOLkPphXNB7S-eJtCbnHj5Chhi8YgOAGaFVmKexV-FrRl_bPrsW8KWd7YEEQi4j27CT2FU14FUVKw_p92BMNdrPBPQTwVK-xBNCZbBDv1r309FyiyNI4GPEBafdyXl9ERymhAbDK5S2lUv8g");'>
+  </div>
+
+  <!-- Foto 2 (tinggi) -->
+  <div class="row-span-2 bg-cover bg-center rounded-xl"
+       style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB-s751xmoAR-mn_9JC6Bm5Ni80SaLYSTXl7pqJBJ9vFXpsRqlrEUazvkl4tpGGt4zeHiYtM6Dl3De2CZyN0O67yBGjdNYWjH19Plpva8bNs2Ob0pudVUh3r7En-uE2Qxfb4wR8PWfAKgpKVtNA8dt4jcR8LDXb8zWw6ew8kMg5-wW_oSLAVWDm9LttZ29LOuUPvPSUiL_8MUj-L-fZZKQaYEHzxNPHEWVZNaBeBFCiRmd3tseUMZEqINsoltDuXMj_kX9nKWWjFA");'>
+  </div>
+
+  <!-- Foto 3 (lebar) -->
+  <div class="col-span-2 row-span-2 bg-cover bg-center rounded-xl"
+       style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD3Z2dXja6kyqg7a_T-RoBoh8AEgrwoGucAX8xEWigTHDl-7jPnBc3ror3xLs5ZXAX8l8tKRK4652fnNpr1gce9Kd5WArGFGoD9kdGYkw3qCkzdRUL4th3MhQNQhr15ziOzpc6_P_HtDxcDrMt4bD6ObNONF4xrLwzFjYISQBwC3WUzHJHZoL-hkJgpf4H5womVEtrniy0jW-tdNiNHtF-TjCwy0lANNZdsm-9YgbnF490zs-31U2hL6MPwuyf_a0VTLEtQUoV4Pg");'>
+  </div>
+
+  <!-- Foto 4 (tinggi) -->
+  <div class="row-span-2 bg-cover bg-center rounded-xl"
+       style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAfywnRjp5juQdgdvuNJaa03A_3CVL7WsUHxe9wEy8Pv5-32qv2Zx_f0xjqOvv6d5zxSxbqnaJ2NCaBL7x7RJUV_cVPbd6OtYEU_Oz3MLgrXISDIDabJQqS51MiYN9whiF_gA3hfoxRNGDzYKeaUI2Pl2cyaHvOveTko_qiWXuphAutLH0R_PhU_tXdRha3qTUsiE9uhMbY5jMAjmcXro-pbSknTiorj8L7H7lvJwFQoqh4OwzMHEcq7LRVbV9Lhq2m1mNYizrkdg");'>
+  </div>
+
+  <!-- Foto 5 (tinggi) -->
+  <div class="row-span-2 bg-cover bg-center rounded-xl"
+       style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCDhV9fZa1bPmWiTEwMonVmCRcj4bZ8u8g4sIHgHIcs_BoWcG4GTphJQwW6xFzWvLk5bJQwuKQzk7G8zgW2DJ8ocV5Q_F_JIVwGQ5gFvZSxJaZ_iyt4RDNp2ybvMkeE2-ZKzhlYjxZrfq3KlD3LSf_RjUrAeA25CWrOh9NOBCTiV11CuBvipLzhjzLwxKbqb8KEqlxYQER6gFe4mLvQSNWLlHbiTkbbmu5hVr_xNyJLX4whgO5XFyrkFGBVsyE5AxKtOmqtvvPfXw");'>
+  </div>
+
+  <!-- Foto 6 (lebar) -->
+  <div class="col-span-2 row-span-2 bg-cover bg-center rounded-xl"
+       style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA6UgxRxDxF0k0WTFhe4IO40ynwa_jyVvWpbn5y8pZ-SyIfiG0sCfZo_4NLlAxaktLsPaTxflfkjJr56kx_B1YnMQf3pLaCQPuZUP2oKckAZfor3mlYIk_5CUkm05haRv2Tk4BMd0cZDEGxBggaQ0gTkwnH4DioBOfS-rryZg_DOsD5JxoVtzwUfPJZpDoKL6yhjaL0vGwODDOZy9ahxY-50dvrx2QsPNSRVlW2k8t275w3-TdqC1gqWp0C_loSXV3MAkuoCCwrmA");'>
+  </div>
+
+  <!-- Foto 7 (tinggi) -->
+  <div class="row-span-2 bg-cover bg-center rounded-xl"
+       style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC_a63iE3-RIXOI_GwiV258eio_yi1aOX0ze5VPlYcIU-AR9Lcla1HvT4P6aJr3PWEchAOakgPyOtU_kNO5Gd972YvO_dQHQ6lyfztmUmXQi_uSuPEwa1ZvUvsDgiEcsdMMnsK9Rls5AQ-84TEfzCEkDMv0xqja_BF_5KfvPq8jJtP9kC0zZvraU_yWA84Pn3JfGJUml8A0h6hQEQdxGG4WeiRvcFl5h0GMD5xtlV3tHEw6kgercrjvTDscmayVWRbZ7DTAIsRm8w");'>
+  </div>
+
+  <!-- Foto 8 (tinggi) -->
+  <div class="row-span-2 bg-cover bg-center rounded-xl"
+       style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAnZ97uzmts1kW3SJNCTsly3k-4cEa7xZHMPTq6ku7CsXl1cbJ5ykgQAOu30MTCoWYYYxWOqqQNN4NBO5wGJBhER5V9UDSkKp-QgTNvwdz_N0fQjbtwt_sigJ3g90dd_771SHEZEWfUJ-Jk65eebKtfpBOLm1rPcWTXrl4LST0Q7kXm5LguLBE5JbWEbJ-F1ShaDRQac2vaJ5kELMT_wdgZbTIz1WbCW20mBxxSGXZu85Ceo0KRl9-PA6SPwNHUYNg4aetE2LdM6g");'>
+  </div>
+
+</div>
+
+</main>
+<div class="sticky bottom-0 w-full bg-gradient-to-t from-background-light to-transparent p-4 dark:from-background-dark">
+<button class="flex h-12 w-full items-center justify-center gap-x-2 rounded-xl bg-primary px-4 shadow-lg shadow-primary/30">
+<p class="text-base font-bold leading-normal text-white">Diskusikan Proyek Serupa</p>
+<span class="material-symbols-outlined text-white">east</span>
+</button>
+</div>
+</div>
+
+</body></html>
